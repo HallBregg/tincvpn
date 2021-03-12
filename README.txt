@@ -18,6 +18,7 @@ Subnet = 10.0.0.1/32
 EOT
 
 sudo tincd -n netname -K4096 # generate public/private keys (use docker to do this) default locations
+docker run --rm -it -v $PWD/tinc/netname:/etc/tinc/netname -w /etc/tinc/netname hallbregg/tinc:latest tincd -n netname -K4096
 
 touch tinc/netname/tinc-up
 cat <<EOT >> tinc/netname/tinc-up
