@@ -1,0 +1,2 @@
+docker run -d --rm -it --net=host -p 655:655/udp -p 655:655/tcp -v $PWD/netname:/etc/tinc/netname --device=/dev/net/tun
+--cap-add NET_ADMIN hallbregg/tinc tincd -n mainVPN -D -d3
